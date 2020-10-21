@@ -15,4 +15,4 @@ def factorial(n):
     return n * factorial(n-1) if n else 1
 
 def find_sin():
-    return None
+    return "dummy"
