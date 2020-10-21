@@ -1,6 +1,6 @@
 from functools import lru_cache
 
-__all__ = ['my_sum', 'factorial', 'find_sin']
+__all__ = ['my_sum', 'factorial']
 
 
 def my_sum(iterable):
