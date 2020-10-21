@@ -1,4 +1,5 @@
 from functools import lru_cache
+from numpy import sin
 
 __all__ = ['my_sum', 'factorial', 'find_sin']
 
@@ -15,5 +16,5 @@ def factorial(n):
     return n * factorial(n-1) if n else 1
 
 
-def find_sin():
-    return None
+def find_sin(radian):
+    return sin(radian)
