@@ -16,5 +16,5 @@ def factorial(n):
     return n * factorial(n-1) if n else 1
 
 
-def find_sin(radian):
+def find_sin(radian):  # Note: I am lazy here, sorry
     return sin(radian)
