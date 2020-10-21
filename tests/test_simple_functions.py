@@ -1,6 +1,7 @@
 import pytest
 
 from simple_functions import my_sum, factorial, find_sin
+from numpy import pi
 
 
 class TestSimpleFunctions(object):
@@ -27,6 +28,7 @@ class TestSimpleFunctions(object):
 
     @pytest.mark.parametrize('number, expected', [
         (0, 0),
+        (pi/2, 1)
     ])
     def test_find_sin(self, number, expected):
         '''Test our find sin'''
