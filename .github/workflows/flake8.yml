@@ -15,7 +15,7 @@ on:
 jobs:
   pytest:
     name: ${{ matrix.name }}
-    runs-on: ${{ matrix.os }}
+    runs-on: "${{ matrix.os }}"
 
     env:
       PYTHON_VERSION: "${{ matrix.python-version }}"
@@ -29,7 +29,7 @@ jobs:
         name: [
            python36-ubuntu1804,
            python38-ubuntu2004,
-           python37-macOS
+           # python37-macOS
         ]
         include:
         - name: python36-ubuntu1804
@@ -40,9 +40,9 @@ jobs:
           python-version: 3.8
           os: ubuntu-20.04
 
-    #    - name: python37-macOs
-    #      python-version: 3.7
-    #      os: macos-latest
+        # - name: python37-macOs
+        #  python-version: 3.7
+        #  os: macos-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -50,15 +50,7 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    #- name: Mac Install
-    #  if: matrix.os == 'macos-latest'
-    #  run: |
-    #    sudo apt-get install python3-setuptools -y
-    #    pip3 install --upgrade pip
-    #    pip3 install -e .
-    #    pip3 install -r requirements.txt
-    - name: Linux Install
-      if: matrix.os != 'macos-latest'
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install flake8

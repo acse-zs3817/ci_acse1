@@ -15,7 +15,7 @@ on:
 jobs:
   pytest:
     name: ${{ matrix.name }}
-    runs-on: ${{ matrix.os }}
+    runs-on: "${{ matrix.os }}"
 
     env:
       PYTHON_VERSION: "${{ matrix.python-version }}"
